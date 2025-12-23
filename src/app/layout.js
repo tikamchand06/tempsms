@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Toaster } from "../components/ui/sonner";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -87,6 +88,8 @@ export default function RootLayout({ children }) {
 
         <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </body>
+
+      <GoogleAnalytics gaId={process.env.GA_ID} />
     </html>
   );
 }
